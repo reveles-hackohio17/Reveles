@@ -7,7 +7,7 @@ class Event(models.Model):
     description = models.TextField()
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
-    longitude = models.FloatField()
+	longitude = models.FloatField()
 	latitude = models.FloatField()
     created_date = models.DateTimeField(
         default=timezone.now)
