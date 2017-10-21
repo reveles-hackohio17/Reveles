@@ -1,3 +1,24 @@
 from django.db import models
+from django.utils import timezone
 
-# Create your models here.
+class Event(models.Model):
+    author = models.ForeignKey('auth.User')
+    event_name = models.CharField(max_length=200)
+    description = models.TextField()
+    start_time = models.DateTimeField()
+    end_time = models.DateTimeField()
+    location = models.TextField()
+    created_date = models.DateTimeField(
+        default=timezone.now)
+    cost = models.TextField()
+    num_likes = models.IntegerField()
+    num_attendees = models.IntegerField()
+    
+
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.title
