@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,17 +12,17 @@
     <title>Reveles | Discover your City</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
-    <link href="css/agency.min.css" rel="stylesheet">
+    <link href="{% static 'css/agency.min.css' %}" rel="stylesheet">
 
   </head>
 
@@ -55,6 +56,7 @@
       <div class="container">
         <div class="intro-text">
           <div class="intro-heading text-uppercase">Discover your city</div>
+	  <!-- TODO: Fix "map.html" -->
           <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="map.html">Discover</a>
         </div>
       </div>
@@ -105,7 +107,7 @@
         <div class="row">
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img\Cooper_Towns.jpg" alt="">
+              <img class="mx-auto rounded-circle" src="{% static 'img\Cooper_Towns.jpg' %}" alt="">
               <h4>Cooper Towns</h4>
               <p class="text-muted">Co-Founder/Developer</p>
               <ul class="list-inline social-buttons">
@@ -129,7 +131,7 @@
           </div>
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/Noor_Kassar.png" alt="">
+              <img class="mx-auto rounded-circle" src="{% static 'img/Noor_Kassar.png' %}" alt="">
               <h4>Noor Kassar</h4>
               <p class="text-muted">Co-Founder/Developer</p>
               <ul class="list-inline social-buttons">
@@ -148,7 +150,7 @@
           </div>
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/Andy_Makovec.jpg" alt="">
+              <img class="mx-auto rounded-circle" src="{% static 'img/Andy_Makovec.jpg' %}" alt="">
               <h4>Andy Makovec</h4>
               <p class="text-muted">Co-Founder/Developer</p>
               <ul class="list-inline social-buttons">
@@ -168,7 +170,7 @@
         </div>
         <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/Shreyas_Chaudhari.jpg" alt="">
+              <img class="mx-auto rounded-circle" src="{% static 'img/Shreyas_Chaudhari.jpg' %}" alt="">
               <h4>Shreyas Chaudhari</h4>
               <p class="text-muted">Co-Founder/Developer</p>
               <ul class="list-inline social-buttons">
@@ -211,14 +213,14 @@
       </div>
     </footer>
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/agency.min.js"></script>
+    <script src="{% static 'js/agency.min.js' %}"></script>
 
   </body>
 
