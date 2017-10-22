@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Event Page</title>
+    <title>Reveles | Event Page</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -29,9 +29,9 @@
   <body id="page-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Reveles</a>
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="mainNav">
+      <div class="container-fluid">
+        <a class="navbar-brand js-scroll-trigger" href="/">Reveles</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -39,71 +39,43 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#Description">Description</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#Event Details">Event Details</a>
+              <a class="nav-link js-scroll-trigger" href="#services">INSERT LINK HERE</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <!-- Header -->
-    <header class="masthead">
-      <div class="container">
-        <div class="intro-text">
-          <div class="intro-heading text-uppercase" id = "event_name"></div>
-      <!-- TODO: Fix "map" -->
-        </div>
-      </div>
-    </header>
-    <!-- Services -->
-    <section id="Description">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Description</h2>
-            <p id = "description"></p>
 
-    </section>
-    <!-- Team -->
-    <section class="bg-light" id="team">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Event Description</h2>
-            <p id = "author"></p>
-            <p id = "start_time"></p>
-            <p id = "end_time"></p>
-            <p id = "cost"></p>
-            <p id = "address"></p>
-            <p id = "num_attendees"></p>
-            <p id = "created_date"></p>
-            <img id = "img" />
-		</div>
-     </div>
-	 </div>
-    </section>
+    <!-- Event Details -->
+    <h2 class="section-heading text-center" id="event_name"></div>
+    <h3 class="text-muted text-center" id="INSERT LOCATION">Located @ </h3>
+    <p class="text-center" id="start_time">Start time: </p>
+    <p class="text-center" id="end_time">End time: </p>
+    <br><br><br>
+    <p id="description">Description: </p>
 
-    <!-- Clients -->
-    <section class="py-5">
-      <div class="container">
-        <div class="row">
-        </div>
-      </div>
-    </section>
     <!-- Footer -->
     <footer>
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <span class="copyright">Copyright &copy; Reveles 2017</span>
+            <span class="copyright">Copyright &copy; Your Website 2017</span>
           </div>
           <div class="col-md-4">
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
-                <a href="https://github.com/reveles-hackohio17/Reveles">
-                  <i class="fa fa-github"></i>
+                <a href="#">
+                  <i class="fa fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-facebook"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-linkedin"></i>
                 </a>
               </li>
             </ul>
@@ -129,8 +101,9 @@
     <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="{% static 'js/agency_index.min.js' %}"></script>
-    
+    <script src="{% static 'js/agency.min.js' %}"></script>
+
+    <!-- Passed event name parsing js -->
     <script>
         function parseURLParams(url) {
             var queryStart = url.indexOf("=") + 1;
@@ -158,19 +131,7 @@
         document.getElementById("created_date").innerHTML = "Created Date: " +cur_event["fields"]["created_date"];
 		document.getElementById("cost").innerHTML = "Cost: " + cur_event["fields"]["cost"];
     </script>
+
   </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
