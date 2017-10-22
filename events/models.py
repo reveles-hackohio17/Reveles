@@ -1,9 +1,6 @@
 from django.db import models
 from django.utils import timezone
 
-def return_zero():
-    return 0
-
 class Event(models.Model):
     author = models.ForeignKey('auth.User')
     event_name = models.CharField(max_length=200)
