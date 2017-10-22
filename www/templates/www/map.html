@@ -59,11 +59,26 @@
         <p>
         <br />
         </p>
+        <!--
+        <script>
+          var temp = "{{ top_posts|escapejs }}";
+          top_posts = JSON.parse(temp);
+          for(var i =0; i< 10; i++)
+          {
+            '<a href="../../event_page?event_name=' + loc["fields"]["event_name"] +'">' + '<img src="{{event.image}}>' + '</a>'
+          }
+        </script>
+        -->
         <ul>
-          {% for post in top_posts %}
-              <img src="{{post.image}}">
+          {% for event in top_posts %}
+              <h1>
+                <a href="../../event_page/?event_name={{event.event_name}}">
+                  <img src="{{ event.image }}">
+                </a>
+            </h1>
           {% endfor %}
         </ul>
+      
         <div class="row">
         </div>
       </div>

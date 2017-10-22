@@ -4,6 +4,7 @@ from django.core import serializers
 from .forms import EventForm
 from geopy.geocoders import GoogleV3
 from django.http import HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 
@@ -37,9 +38,8 @@ def add_event(request):
 	    form = EventForm()
 	return render(request, 'www/add_event.html', {'form': form})
 
-def event_page(request):
+def event_page(request, pk):
+    #event = get_object_or_404(Post, pk=pk)
     json_serializer = serializers.get_serializer("json")()
     events = json_serializer.serialize(Event.objects.all(), ensure_ascii=False)
     return render(request, 'www/event_page.html',{'events':events})
-
-
