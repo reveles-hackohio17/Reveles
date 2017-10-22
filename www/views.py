@@ -10,8 +10,9 @@ def homepage(request):
 def map(request):
     json_serializer = serializers.get_serializer("json")()
     events = json_serializer.serialize(Event.objects.all(), ensure_ascii=False)
+    top_posts = Event.objects.order_by('num_likes')
     #events = Event.objects.all()
-    return render(request, 'www/map.html', {'events': events})
+    return render(request, 'www/map.html', {'events': events, 'top_posts':top_posts})
 
 def add_event(request):
     if request.method == "POST":
@@ -25,7 +26,3 @@ def add_event(request):
     else:
         form = EventForm()
     return render(request, 'www/add_event.html', {'form': form})
-
-
-
-

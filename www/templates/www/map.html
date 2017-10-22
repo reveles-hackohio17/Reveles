@@ -60,13 +60,19 @@
         </div>
       </div>
     </nav>
-    <!-- Top Posters -->
-     <section class="bg-light" id="Top Posters">
+    <!-- Top Posters -->">
       <div class="container">
+        <p>
+        <br />
+        </p>
+        <ul>
+          {% for post in top_posts %}
+              <img src="{{post.image}}">
+          {% endfor %}
+        </ul>
         <div class="row">
         </div>
       </div>
-    </section>
       <div class="btn-group">
         <button type="button" class="btn btn-category dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Category
@@ -141,16 +147,11 @@
             //nothing
           }
         }
-<<<<<<< HEAD
-=======
 
         var markerCluster = new MarkerClusterer(map, locations,
              {imagePath: 
              'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'}); 
-        
-
-
->>>>>>> 5e08cc9cfd21c44fa720d4de076b7c3fba3885f5
+      
       }
     </script>
         <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
@@ -204,7 +205,8 @@
     <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="{% static 'js/agency_index.min.js' %}"></script>
+    <script src="{% static 'js/agency.min.js' %}"></script>
+    <script src="{% static 'js/horizontalScrol.js' %}"></script>
   </body>
 
 </html>
