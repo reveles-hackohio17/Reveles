@@ -103,11 +103,11 @@
           Category
         </button>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">All</a>
-          <a class="dropdown-item" href="#">Clubs</a>
-          <a class="dropdown-item" href="#">Music</a>
-          <a class="dropdown-item" href="#">Food</a>
-          <a class="dropdown-item" href="#">Social</a>
+          <a class="dropdown-item" href="?category=all">All</a>
+          <a class="dropdown-item" href="?category=Student Org">Clubs</a>
+          <a class="dropdown-item" href="?category=music">Music</a>  
+          <a class="dropdown-item" href="?category=food">Food</a>
+          <a class="dropdown-item" href="?category=social">Social</a>
         </div>
       </div>
 
@@ -130,12 +130,24 @@
 
         //info window to use for each marker
         var infowindow = new google.maps.InfoWindow();
+
+        function parseURLParams(url) {
+            var queryStart = url.indexOf("=") + 1;
+            var queryEnd   = url.length;
+            var query = url.slice(queryStart, queryEnd);
+            query = query.replace(/%20/g, " ")
+			      query = query.replace(/%27/g, "'")
+            return query;
+        }
+        category = parseURLParams(window.location.href )
+
         
         var locations = new Array();
         var temp = "{{ events|escapejs }}";
         events = JSON.parse(temp);
         for(var i = 0; i < events.length; i++){ 
           //placeMarker(events[i]);
+          if(category != "" && events[i]["fields"]["general_category"].toUpperCase()==category.toUpperCase())
           locations.push(placeMarker(events[i]));   
       
         }
