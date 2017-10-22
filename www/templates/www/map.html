@@ -65,7 +65,9 @@
     <div class="carousel-item active">
       {% for event in top_posts_1 %}
         <div class="img-contain">
+          <a href="../../event_page/?event_name={{event.event_name}}">
           <img class="d-block img-fluid" src="{{ event.image }}" alt="">
+          </a>
         </div>
       {% endfor %}
     </div>
