@@ -85,24 +85,26 @@
         //info window to use for each marker
         var infowindow = new google.maps.InfoWindow();
         
+        var locations = new Array();
         var temp = "{{ events|escapejs }}";
         events = JSON.parse(temp);
-        for(var i = 0; i < events.length; i++){            
-
-          placeMarker(events[i]);   
+        for(var i = 0; i < events.length; i++){ 
+          //placeMarker(events[i]);
+          locations.push(placeMarker(events[i]));   
       
         }
 
         function placeMarker(loc){
 
-          var lat1 = events[i]["fields"]["latitude"]
-          var long1 = events[i]["fields"]["longitude"]
+          //can't place marker if latitude and longitude fields are not present
+          if(loc["fields"]["latitude"] != null){
+          var lat1 = loc["fields"]["latitude"];
+          var long1 = loc["fields"]["longitude"];
           position = {lat: lat1, lng: long1};
           var marker = new google.maps.Marker({
           position: position,
           map: map
         }); 
-          console.log(loc);
           //create content for info window
           var contentString = '<div id="content">'+
         '<div id="siteNotice">'+
@@ -119,15 +121,25 @@
           //set click listener
             marker.addListener('click', function() {
               infowindow.close(); //close previous windows
-              console.log(contentString);
               infowindow.setContent(contentString);
               infowindow.open(map, marker);
           });
+
+          return marker;
+          } else{
+            //nothing
+          }
         }
+
+        var markerCluster = new MarkerClusterer(map, locations,
+             {imagePath: 
+             'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'}); 
         
 
 
       }
+    </script>
+        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
     </script>
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDL7c6Lll2VJzfF1jfqRvfxXk8dyoI_nvU&callback=initMap">
