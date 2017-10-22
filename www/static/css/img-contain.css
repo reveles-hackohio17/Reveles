@@ -1,0 +1,15 @@
+.img-contain img {
+float:left;
+display:inline-block;
+max-width:10000px;
+max-height:150px;
+width:auto; /* or whatever you want*/
+height:auto; /* same as above */
+padding-left:25px;
+padding-top:10px;
+padding-right:25px;
+padding-bottom:10px;
+}
+.carousel-mega-pad {
+padding-top:60px;
+}

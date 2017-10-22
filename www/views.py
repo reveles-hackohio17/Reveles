@@ -16,8 +16,11 @@ def map(request):
     json_serializer = serializers.get_serializer("json")()
     events = json_serializer.serialize(Event.objects.all(), ensure_ascii=False)
     top_posts = Event.objects.order_by('num_likes')
+    top_posts_1 = top_posts[0:3]
+    top_posts_2 = top_posts[4:7]
+    top_posts_3 = top_posts[8:9]
     #events = Event.objects.all()
-    return render(request, 'www/map.html', {'events': events, 'top_posts':top_posts})
+    return render(request, 'www/map.html', {'events': events, 'top_posts':top_posts, 'top_posts_1': top_posts_1, 'top_posts_2': top_posts_2, 'top_posts_3': top_posts_3})
 
 def add_event(request):
 
