@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ </head>
+ <body>
+	<h1 id = "h1"></h1>
+	<p id = "author"></p>
+	<p id = "description"></p>
+	<p id = "author"></p>
+	<p id = "start_time"></p>
+	<p id = "end_time"></p>
+	<p id = "num_likes"></p>
+	<p id = "num_attendees"></p>
+	<p id = "created_date"></p>
+	<img id = "img" />
+	
+ </body>
+	<script>
+			function parseURLParams(url) {
+				var queryStart = url.indexOf("=") + 1;
+				var queryEnd   = url.length;
+				var query = url.slice(queryStart, queryEnd);
+				query = query.replace("%20", " ")
+				return query;
+			}
+			name = parseURLParams(window.location.href )
+			var temp = "{{ events|escapejs }}";
+			events = JSON.parse(temp);
+			var i = 0;
+			while(events[i]["fields"]["event_name"]!=name)
+			{
+				i++;
+			}
+			var cur_event = events[i];
+			document.getElementById("h1").innerHTML = "Event Name: " + cur_event["fields"]["event_name"];
+			document.getElementById("description").innerHTML = "Description: " + cur_event["fields"]["description"];
+			document.getElementById("author").innerHTML = "Author: " +cur_event["fields"]["author"];
+			document.getElementById("start_time").innerHTML = "Start Time: " +cur_event["fields"]["start_time"];
+			document.getElementById("end_time").innerHTML = "End Time: " +cur_event["fields"]["end_time"];
+			document.getElementById("num_likes").innerHTML = "Likes: " +cur_event["fields"]["num_likes"];
+			document.getElementById("num_attendees").innerHTML = "Attendees: " +cur_event["fields"]["num_attendees"];
+			document.getElementById("created_date").innerHTML = "Created Date: " +cur_event["fields"]["created_date"];
+			document.getElementById("img").src = cur_event["fields"]["image"];
+	</script>
+</html>
