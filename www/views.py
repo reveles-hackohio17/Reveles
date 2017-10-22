@@ -26,3 +26,14 @@ def add_event(request):
     else:
         form = EventForm()
     return render(request, 'www/add_event.html', {'form': form})
+<<<<<<< HEAD
+=======
+
+def event_page(request):
+    json_serializer = serializers.get_serializer("json")()
+    events = json_serializer.serialize(Event.objects.all(), ensure_ascii=False)
+    return render(request, 'www/event_page.html',{'events':events})
+
+
+
+>>>>>>> 3af32497944d6955f3fca414e46483e9f97105ef
