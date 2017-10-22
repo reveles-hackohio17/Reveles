@@ -14,7 +14,8 @@ class Event(models.Model):
     cost = models.TextField()
     num_likes = models.IntegerField()
     num_attendees = models.IntegerField()
-    thumbnail = models.ImageField()
+    address = models.TextField()
+    image = models.TextField()
     
 
     def publish(self):
