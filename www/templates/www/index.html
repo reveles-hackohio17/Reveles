@@ -1,7 +1,9 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 
   <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -10,18 +12,22 @@
     <title>Reveles | Discover your City</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
     <!-- Custom styles for this template -->
-    <link href="css/agency.min.css" rel="stylesheet">
+    <link href="{% static 'css/agency.min.css' %}" rel="stylesheet">
+
   </head>
+
   <body id="page-top">
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
@@ -36,7 +42,7 @@
               <a class="nav-link js-scroll-trigger" href="#services">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="map.html">Map</a>
+              <a class="nav-link js-scroll-trigger" href="map">Map</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#team">Team</a>
@@ -50,7 +56,8 @@
       <div class="container">
         <div class="intro-text">
           <div class="intro-heading text-uppercase">Discover your city</div>
-          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="map.html">Discover</a>
+	  <!-- TODO: Fix "map" -->
+          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="map">Discover</a>
         </div>
       </div>
     </header>
@@ -100,17 +107,22 @@
         <div class="row">
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img\Cooper_Towns.jpg" alt="">
+              <img class="mx-auto rounded-circle" src="{% static 'img\Cooper_Towns.jpg' %}" alt="">
               <h4>Cooper Towns</h4>
               <p class="text-muted">Co-Founder/Developer</p>
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
-                  <a href="https://www.facebook.com/cooper.towns">
+                  <a href="#">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
                     <i class="fa fa-facebook"></i>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="https://www.linkedin.com/in/cooper-towns-5b7764144?trk=pub-pbmap">
+                  <a href="#">
                     <i class="fa fa-linkedin"></i>
                   </a>
                 </li>
@@ -119,17 +131,17 @@
           </div>
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/Noor_Kassar.png" alt="">
+              <img class="mx-auto rounded-circle" src="{% static 'img/Noor_Kassar.png' %}" alt="">
               <h4>Noor Kassar</h4>
               <p class="text-muted">Co-Founder/Developer</p>
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
-                  <a href="https://www.facebook.com/noor.kassar.77">
+                  <a href="#">
                     <i class="fa fa-facebook"></i>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="https://www.linkedin.com/in/noor-kassar-7b3a17105">
+                  <a href="#">
                     <i class="fa fa-linkedin"></i>
                   </a>
                 </li>
@@ -138,17 +150,17 @@
           </div>
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/Andy_Makovec.jpg" alt="">
+              <img class="mx-auto rounded-circle" src="{% static 'img/Andy_Makovec.jpg' %}" alt="">
               <h4>Andy Makovec</h4>
               <p class="text-muted">Co-Founder/Developer</p>
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
-                  <a href="https://www.facebook.com/andy.makovec.5">
+                  <a href="#">
                     <i class="fa fa-facebook"></i>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="https://www.linkedin.com/in/andrew-makovec-aba838b4">
+                  <a href="#">
                     <i class="fa fa-linkedin"></i>
                   </a>
                 </li>
@@ -158,12 +170,17 @@
         </div>
         <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/Shreyas_Chaudhari.jpg" alt="">
+              <img class="mx-auto rounded-circle" src="{% static 'img/Shreyas_Chaudhari.jpg' %}" alt="">
               <h4>Shreyas Chaudhari</h4>
               <p class="text-muted">Co-Founder/Developer</p>
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
-                  <a href="https://www.linkedin.com/in/shreyaschaudhari">
+                  <a href="#">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
                     <i class="fa fa-linkedin"></i>
                   </a>
                 </li>
@@ -196,13 +213,15 @@
       </div>
     </footer>
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/agency.min.js"></script>
+    <script src="{% static 'js/agency.min.js' %}"></script>
+
   </body>
+
 </html>
