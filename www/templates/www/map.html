@@ -147,7 +147,9 @@
         events = JSON.parse(temp);
         for(var i = 0; i < events.length; i++){ 
           //placeMarker(events[i]);
-          if(category != "" || events[i]["fields"]["general_category"].toUpperCase()==category.toUpperCase()){
+          console.log(category);
+          if(category == "" || events[i]["fields"]["general_category"].toUpperCase()==category.toUpperCase()){
+            console.log(events[i]["fields"]["general_category"].toUpperCase());
             locations.push(placeMarker(events[i]));   
           }
       
