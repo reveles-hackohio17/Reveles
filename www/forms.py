@@ -9,4 +9,4 @@ class EventForm(forms.ModelForm):
     end_time = forms.DateField(widget=DateInput())
     class Meta:
         model = Event
-        fields = ('event_name', 'description', 'start_time', 'end_time', 'address', 'cost', 'image')
+        fields = ('author', 'event_name', 'description', 'start_time', 'end_time', 'address', 'cost', 'image')
