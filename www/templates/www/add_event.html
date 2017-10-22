@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Add Event</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <div class="page-header">
+            <a href="{% url 'add_event' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            <h1><a href="/">Add Event</a></h1>
+        </div>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css"> 
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+        <script>
+        $(document).ready(function() {
+            $('.datepicker').datepicker();
+        });
+        </script>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                        <h1>New event</h1>
+                        <form method="POST" class="post-form">{% csrf_token %}
+                            {{ form.as_p }}
+                            
+                            <button type="submit" class="save btn btn-default">Save</button>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
