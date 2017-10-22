@@ -30,7 +30,9 @@
         width: 100%;
       }
     </style>
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css.map" rel="stylesheet">
   </head>
 
   <body id="page-top">
@@ -59,16 +61,25 @@
       </div>
     </nav>
     <!-- Top Posters -->
-    <section id = "Top Posters">
-
+     <section class="bg-light" id="Top Posters">
+      <div class="container">
+        <div class="row">
+        </div>
+      </div>
     </section>
-    <!-- Filter -->
-    <section id = "Filters">
-        
-    </section>
+      <div class="btn-group">
+        <button type="button" class="btn btn-category dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Category
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">All</a>
+          <a class="dropdown-item" href="#">Clubs</a>
+          <a class="dropdown-item" href="#">Music</a>
+          <a class="dropdown-item" href="#">Food</a>
+          <a class="dropdown-item" href="#">Social</a>
+        </div>
+      </div>
     <!-- Map -->
-    <section id = "Map">
-
     <div id="map"></div>   
     <script>
       function initMap() {
@@ -124,16 +135,11 @@
               infowindow.open(map, marker);
           });
         }
-        
-
-
       }
     </script>
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDL7c6Lll2VJzfF1jfqRvfxXk8dyoI_nvU&callback=initMap">
     </script> 
-        
-    </section>
     <footer>
       <div class="container">
         <div class="row">
@@ -180,8 +186,7 @@
     <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="{% static 'js/agency.min.js' %}"></script>
-
+    <script src="{% static 'js/agency_index.min.js' %}"></script>
   </body>
 
 </html>
