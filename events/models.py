@@ -7,14 +7,15 @@ class Event(models.Model):
     description = models.TextField()
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
-    location = models.TextField()
+    longitude = models.FloatField()
+    latitude = models.FloatField()
     created_date = models.DateTimeField(
         default=timezone.now)
     cost = models.TextField()
     num_likes = models.IntegerField()
     num_attendees = models.IntegerField()
+    thumbnail = models.ImageField()
     
-
 
     def publish(self):
         self.published_date = timezone.now()
